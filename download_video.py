@@ -26,7 +26,8 @@ print(path_to_video, FPS, RES)
 cap = cv2.VideoCapture(path_to_video)  # says we capture an image from a webcam
 image_size = RESCONVERT[RES]
 
-frame_step = FPS
+frame_step = 1
+# frame_step = FPS
 destination_dir = 'output/'
 os.makedirs(destination_dir, exist_ok=True)
 destination_format = 'png'
