@@ -1,4 +1,5 @@
 on:
+  push:
   workflow_dispatch: # only trigger when manual
 name: Download Youtube Video Through Pytube
 
@@ -25,8 +26,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: video, output
-          release_name: Release
-          draft: true
+          release_name: Release - ${{ github.event.head_commit.message }}
+          draft: false
           prerelease: false
       - name: Upload Release Asset
         id: upload-release-asset
