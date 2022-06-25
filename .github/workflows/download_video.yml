@@ -1,6 +1,5 @@
 on:
   push:
-
   workflow_dispatch: # only trigger when manual
 name: Download Youtube Video Through Pytube
 
@@ -18,8 +17,8 @@ jobs:
           python download_video.py
       - name: Zip output
         run: |
-          zip -r -9 video.zip video/
-          zip -r -9 output.zip output/
+          zip -rm -9 video.zip video/
+          zip -rm -9 output.zip output/
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
