@@ -28,7 +28,7 @@ image_size = RESCONVERT[RES]
 
 # frame_step = 1
 frame_step = FPS
-destination_dir = 'output/'
+destination_dir = 'video/'
 os.makedirs(destination_dir, exist_ok=True)
 destination_format = 'png'
 
