@@ -15,10 +15,10 @@ jobs:
       - name: Get Video
         run: |
           python download_video.py
-      - name: Zip output
-        run: |
-          zip -rm --quiet -9 video.zip video/
-          zip -rm --quiet -9 output.zip output/
+      - name: Zip video
+        run: zip -rm --quiet -9 video.zip video
+      - name: Zip Output
+        run: zip -rm --quiet -9 output.zip output
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
