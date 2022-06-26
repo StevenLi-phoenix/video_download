@@ -29,7 +29,7 @@ def download():
 def slice():
     global FPS, RES, path_to_video
 
-    section = 1  # [0,1,2,...
+    section = 2  # [0,1,2,...
 
     cap = cv2.VideoCapture(path_to_video)
     image_size = RESCONVERT[RES]
@@ -43,8 +43,8 @@ def slice():
     image_counter = 0
     read_counter = 0
 
-    threshold_start = section * 9600
-    threshold_end = (section + 1) * 9600
+    threshold_start = section * 4800
+    threshold_end = (section + 1) * 4800
 
     while (cap.isOpened()):
         read_counter += 1
