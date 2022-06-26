@@ -34,6 +34,7 @@ destination_format = 'png'
 
 image_counter = 0
 read_counter = 0
+second_count = 0
 
 while (cap.isOpened()):
     read_counter += 1
@@ -41,9 +42,10 @@ while (cap.isOpened()):
         continue
     ret, cv2_im = cap.read()
     if ret and read_counter % frame_step == 0:
+        second_count += 1
         if image_size:
             cv2.resize(cv2_im, image_size)
-        cv2.imwrite(os.path.join(destination_dir, str(image_counter) + "." + destination_format), cv2_im)
+        cv2.imwrite(os.path.join(destination_dir, str(second_count) + "." + destination_format), cv2_im)
         print(f"\r{image_counter}/{read_counter}", end="")
         image_counter += 1
     elif not ret:
