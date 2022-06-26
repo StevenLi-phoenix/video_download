@@ -48,6 +48,7 @@ while (cap.isOpened()):
         image_counter += 1
     elif not ret:
         break
+
     if read_counter > 9600:
         break
 cap.release()
