@@ -37,7 +37,7 @@ read_counter = 0
 
 while (cap.isOpened()):
     if read_counter < 4800:
-        pass
+        continue
     ret, cv2_im = cap.read()
     if ret and read_counter % frame_step == 0:
         if image_size:
