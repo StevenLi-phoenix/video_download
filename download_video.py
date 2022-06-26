@@ -36,6 +36,7 @@ image_counter = 0
 read_counter = 0
 
 while (cap.isOpened()):
+    read_counter += 1
     if read_counter < 4800:
         continue
     ret, cv2_im = cap.read()
@@ -47,7 +48,6 @@ while (cap.isOpened()):
         image_counter += 1
     elif not ret:
         break
-    read_counter += 1
     if read_counter > 9600:
         break
 
