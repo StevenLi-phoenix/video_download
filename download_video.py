@@ -44,7 +44,7 @@ while (cap.isOpened()):
         if image_size:
             cv2.resize(cv2_im, image_size)
         cv2.imwrite(os.path.join(destination_dir, str(read_counter//frame_step) + "." + destination_format), cv2_im)
-        print(f"\r{image_counter}/{read_counter}", end="")
+        print(f"\r{read_counter//frame_step}.{destination_format}", end="")
         image_counter += 1
     elif not ret:
         break
