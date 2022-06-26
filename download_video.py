@@ -17,7 +17,7 @@ RESCONVERT = {
 def download():
     global FPS, RES, path_to_video
     yt = YouTube('https://www.youtube.com/watch?v=h3fUgOKFMNU')
-    dl = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().last()
+    dl = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
     print(dl)
     path_to_video = dl.download(output_path="video", filename="1.mp4")
     FPS = dl.fps
