@@ -50,5 +50,4 @@ while (cap.isOpened()):
         break
     if read_counter > 9600:
         break
-
 cap.release()
