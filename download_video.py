@@ -29,13 +29,13 @@ def download():
 def slice():
     global FPS, RES, path_to_video
 
-    section = 2  # [0,1,2,...
+    section = 0  # [0,1,2,...
 
     cap = cv2.VideoCapture(path_to_video)
     image_size = RESCONVERT[RES]
 
-    # frame_step = 1
-    frame_step = FPS
+    frame_step = 1
+    # frame_step = FPS
     destination_dir = 'output/'
     os.makedirs(destination_dir, exist_ok=True)
     destination_format = 'png'
@@ -43,8 +43,8 @@ def slice():
     image_counter = 0
     read_counter = 0
 
-    threshold_start = section * 4800
-    threshold_end = (section + 1) * 4800
+    threshold_start = section * 150
+    threshold_end = (section + 1) * 150
 
     while (cap.isOpened()):
         read_counter += 1
